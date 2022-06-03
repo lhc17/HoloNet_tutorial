@@ -1,38 +1,4 @@
-Usage
-=====
-
-.. _installation:
-
-Installation
-------------
-
-To use Lumache, first install it using pip:
-
-.. code-block:: console
-
-   (.venv) $ pip install lumache
-
-Creating recipes
-----------------
-
-To retrieve a list of random ingredients,
-you can use the ``lumache.get_random_ingredients()`` function:
-
-.. autofunction:: lumache.get_random_ingredients
-
-The ``kind`` parameter should be either ``"meat"``, ``"fish"``,
-or ``"veggies"``. Otherwise, :py:func:`lumache.get_random_ingredients`
-will raise an exception.
-
-.. autoexception:: lumache.InvalidKindError
-
-For example:
-
->>> import lumache
->>> lumache.get_random_ingredients()
-['shells', 'gorgonzola', 'parsley']
-
-Code
+Totorials
 =====
 
 .. code:: ipython3
@@ -52,7 +18,7 @@ Code
     sc.settings.figdir = './figure/'
 
 Load data
-=========
+------
 
 .. code:: ipython3
 
@@ -134,7 +100,7 @@ Load data
 
 
 Construct CE network
-====================
+--------
 
 .. code:: ipython3
 
@@ -153,13 +119,9 @@ Construct CE network
                                                 lr_df=expressed_LR_df,w_best=w_best)
 
 
-.. parsed-literal::
-
-    100%|██████████| 286/286 [38:00<00:00,  7.97s/it]
-
 
 Visualize CE network
-====================
+--------
 
 .. code:: ipython3
 
@@ -202,7 +164,7 @@ Visualize CE network
 
 
 Predict target gene expression with GNN
-=======================================
+---------
 
 .. code:: ipython3
 
@@ -226,13 +188,6 @@ Predict target gene expression with GNN
     np.corrcoef(predict_result_MMP11.T, target.T)
 
 
-.. parsed-literal::
-
-    100%|██████████| 50/50 [01:42<00:00,  2.05s/it]
-    100%|██████████| 50/50 [00:00<00:00, 87.11it/s]
-
-
-
 .. image:: main_tutorial_files/main_tutorial_16_1.png
 
 
@@ -246,7 +201,7 @@ Predict target gene expression with GNN
 
 
 Visualize FCE network
-=====================
+-------
 
 .. code:: ipython3
 
@@ -265,11 +220,6 @@ Visualize FCE network
                                       palette = hn.brca_default_color_celltype)
 
 
-.. parsed-literal::
-
-    100%|██████████| 50/50 [00:15<00:00,  3.17it/s]
-
-
 
 .. image:: main_tutorial_files/main_tutorial_19_1.png
 
@@ -281,27 +231,18 @@ Visualize FCE network
                                          palette=hn.brca_default_color_celltype)
 
 
-.. parsed-literal::
-
-    100%|██████████| 50/50 [00:00<00:00, 709.27it/s]
-
 
 
 .. image:: main_tutorial_files/main_tutorial_20_1.png
 
 
 Identify genes affected more by CCI
-===================================
+-------
 
 .. code:: ipython3
 
     trained_MGC_model_only_type_list_raw, \
     trained_MGC_model_type_GCN_list_raw = hn.pr.mgc_training_for_multiple_targets(X, adj, target_all_gene_expr, device='gpu')
-
-
-.. parsed-literal::
-
-    100%|██████████| 567/567 [2:15:28<00:00, 14.34s/it]  
 
 
 .. code:: ipython3
@@ -311,10 +252,6 @@ Identify genes affected more by CCI
     predicted_expr_only_type_df_raw = hn.pr.get_mgc_result_for_multiple_targets(trained_MGC_model_only_type_list_raw, X, adj,
                                                                                 used_gene_list, adata)
 
-
-.. parsed-literal::
-
-     63%|██████▎   | 358/567 [02:16<01:15,  2.79it/s]
 
 .. code:: ipython3
 
