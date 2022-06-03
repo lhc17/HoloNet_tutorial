@@ -4,4 +4,5 @@ Installation
 Install by PyPi
 -----
 
-.. code:: pip install HoloNet
+.. code:: 
+    pip install HoloNet
