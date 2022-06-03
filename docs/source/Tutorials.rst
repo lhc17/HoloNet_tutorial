@@ -1,4 +1,4 @@
-Ttorials
+Tutorials
 =====
 
 .. code:: ipython3
