@@ -1,4 +1,4 @@
-Totorials
+Ttorials
 =====
 
 .. code:: ipython3
