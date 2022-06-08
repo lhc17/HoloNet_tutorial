@@ -33,7 +33,8 @@ requires = [
     'gtfparse>=1.2.1',
     'pycairo>=1.20; sys_platform == "win32"',
     'leidenalg',
-    'pyreadr'
+    'pyreadr',
+    'pynvml',
 ]
 
 [tool.flit.metadata.requires-extra]
